@@ -13,6 +13,9 @@
 		2C0A86B22C6B4863009BB4B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C0A86B12C6B4863009BB4B6 /* Assets.xcassets */; };
 		2C0A86B52C6B4863009BB4B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C0A86B32C6B4863009BB4B6 /* LaunchScreen.storyboard */; };
 		2C0A86BE2C6B53AF009BB4B6 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86BD2C6B53AF009BB4B6 /* Environment.swift */; };
+		2C0A86C42C6B69A5009BB4B6 /* RESTCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C22C6B69A5009BB4B6 /* RESTCache.swift */; };
+		2C0A86C52C6B69A5009BB4B6 /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C32C6B69A5009BB4B6 /* RESTManager.swift */; };
+		2C0A86C82C6B6AEA009BB4B6 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,8 +26,11 @@
 		2C0A86B12C6B4863009BB4B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C0A86B42C6B4863009BB4B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C0A86B62C6B4863009BB4B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C0A86BC2C6B50E5009BB4B6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		2C0A86BD2C6B53AF009BB4B6 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		2C0A86C02C6B58D5009BB4B6 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		2C0A86C22C6B69A5009BB4B6 /* RESTCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTCache.swift; sourceTree = "<group>"; };
+		2C0A86C32C6B69A5009BB4B6 /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTManager.swift; sourceTree = "<group>"; };
+		2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +63,35 @@
 		2C0A86A72C6B4860009BB4B6 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				2C0A86C12C6B6944009BB4B6 /* REST */,
 				2C0A86A82C6B4860009BB4B6 /* AppDelegate.swift */,
 				2C0A86AA2C6B4860009BB4B6 /* SceneDelegate.swift */,
+				2C0A86BD2C6B53AF009BB4B6 /* Environment.swift */,
 				2C0A86AC2C6B4860009BB4B6 /* MainViewController.swift */,
-				2C0A86BC2C6B50E5009BB4B6 /* Config.xcconfig */,
+				2C0A86C02C6B58D5009BB4B6 /* Config.xcconfig */,
 				2C0A86B12C6B4863009BB4B6 /* Assets.xcassets */,
 				2C0A86B32C6B4863009BB4B6 /* LaunchScreen.storyboard */,
 				2C0A86B62C6B4863009BB4B6 /* Info.plist */,
-				2C0A86BD2C6B53AF009BB4B6 /* Environment.swift */,
 			);
 			path = Weather;
+			sourceTree = "<group>";
+		};
+		2C0A86C12C6B6944009BB4B6 /* REST */ = {
+			isa = PBXGroup;
+			children = (
+				2C0A86C62C6B6A9B009BB4B6 /* JSON */,
+				2C0A86C22C6B69A5009BB4B6 /* RESTCache.swift */,
+				2C0A86C32C6B69A5009BB4B6 /* RESTManager.swift */,
+			);
+			path = REST;
+			sourceTree = "<group>";
+		};
+		2C0A86C62C6B6A9B009BB4B6 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +167,9 @@
 				2C0A86AD2C6B4860009BB4B6 /* MainViewController.swift in Sources */,
 				2C0A86BE2C6B53AF009BB4B6 /* Environment.swift in Sources */,
 				2C0A86A92C6B4860009BB4B6 /* AppDelegate.swift in Sources */,
+				2C0A86C52C6B69A5009BB4B6 /* RESTManager.swift in Sources */,
+				2C0A86C82C6B6AEA009BB4B6 /* Cities.swift in Sources */,
+				2C0A86C42C6B69A5009BB4B6 /* RESTCache.swift in Sources */,
 				2C0A86AB2C6B4860009BB4B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +306,7 @@
 		};
 		2C0A86BA2C6B4863009BB4B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C0A86BC2C6B50E5009BB4B6 /* Config.xcconfig */;
+			baseConfigurationReference = 2C0A86C02C6B58D5009BB4B6 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
