@@ -16,6 +16,8 @@
 		2C0A86C42C6B69A5009BB4B6 /* RESTCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C22C6B69A5009BB4B6 /* RESTCache.swift */; };
 		2C0A86C52C6B69A5009BB4B6 /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C32C6B69A5009BB4B6 /* RESTManager.swift */; };
 		2C0A86C82C6B6AEA009BB4B6 /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */; };
+		2C0A86CA2C6B9836009BB4B6 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86C92C6B9836009BB4B6 /* DetailsViewController.swift */; };
+		2C0A86CC2C6B9DD9009BB4B6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A86CB2C6B9DD9009BB4B6 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		2C0A86C22C6B69A5009BB4B6 /* RESTCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTCache.swift; sourceTree = "<group>"; };
 		2C0A86C32C6B69A5009BB4B6 /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTManager.swift; sourceTree = "<group>"; };
 		2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		2C0A86C92C6B9836009BB4B6 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		2C0A86CB2C6B9DD9009BB4B6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				2C0A86AA2C6B4860009BB4B6 /* SceneDelegate.swift */,
 				2C0A86BD2C6B53AF009BB4B6 /* Environment.swift */,
 				2C0A86AC2C6B4860009BB4B6 /* MainViewController.swift */,
+				2C0A86C92C6B9836009BB4B6 /* DetailsViewController.swift */,
 				2C0A86C02C6B58D5009BB4B6 /* Config.xcconfig */,
 				2C0A86B12C6B4863009BB4B6 /* Assets.xcassets */,
 				2C0A86B32C6B4863009BB4B6 /* LaunchScreen.storyboard */,
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				2C0A86C72C6B6AEA009BB4B6 /* Cities.swift */,
+				2C0A86CB2C6B9DD9009BB4B6 /* Weather.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				2C0A86AD2C6B4860009BB4B6 /* MainViewController.swift in Sources */,
 				2C0A86BE2C6B53AF009BB4B6 /* Environment.swift in Sources */,
 				2C0A86A92C6B4860009BB4B6 /* AppDelegate.swift in Sources */,
+				2C0A86CA2C6B9836009BB4B6 /* DetailsViewController.swift in Sources */,
+				2C0A86CC2C6B9DD9009BB4B6 /* Weather.swift in Sources */,
 				2C0A86C52C6B69A5009BB4B6 /* RESTManager.swift in Sources */,
 				2C0A86C82C6B6AEA009BB4B6 /* Cities.swift in Sources */,
 				2C0A86C42C6B69A5009BB4B6 /* RESTCache.swift in Sources */,

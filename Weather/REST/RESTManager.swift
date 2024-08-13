@@ -23,8 +23,20 @@ class RESTManager {
     func getCities(for name: String) async -> Cities? {
         let query = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? name
         let url = "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&appid=\(Environment.apiKey)"
+        return await getDataAndHandleErrors(from: url, with: Cities.self)
+    }
+
+    func getWeather(for city: City) async -> Weather? {
+        let url = """
+        https://api.openweathermap.org/data/3.0/onecall?lat=\(city.lat)&lon=\(city.lon)\
+        &exclude=minutely,alerts&units=metric&appid=\(Environment.apiKey)
+        """
+        return await getDataAndHandleErrors(from: url, with: Weather.self)
+    }
+
+    private func getDataAndHandleErrors<T>(from url: String, with type: T.Type) async -> T? where T: Decodable {
         do {
-            return try await getData(url, type: Cities.self)
+            return try await getData(from: url, with: type)
         } catch RESTError.pageNotFound {
             print("[I] RESTManager - No data available for url: \(url)")
         } catch RESTError.unparsableURL {
@@ -37,7 +49,7 @@ class RESTManager {
         return nil
     }
 
-    private func getData<T>(_ url: String, type: T.Type) async throws -> T where T: Decodable {
+    private func getData<T>(from url: String, with type: T.Type) async throws -> T where T: Decodable {
         if let response = cache.getRecentResponse(from: url) as? T {
             return response
         } else {

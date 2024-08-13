@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UITableViewController {
 
     private let searchController = UISearchController(searchResultsController: nil)
+    private var searchTask: Task<(), Never>?
     private var cities: Cities = []
 
     override func viewDidLoad() {
@@ -21,6 +22,7 @@ class MainViewController: UITableViewController {
         searchController.searchBar.searchBarStyle = .minimal
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cityCell")
@@ -38,20 +40,36 @@ class MainViewController: UITableViewController {
         cell.textLabel!.text = "\(city.name), \(city.state), \(city.country)"
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = DetailsViewController()
+        detailVC.selectedCity = cities[indexPath.row]
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 extension MainViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            let searchTextWithoutDiacritic = searchText.folding(options: .diacriticInsensitive,
-                                                                locale: Locale(identifier: "en_US"))
-            let strippedSearchText = searchTextWithoutDiacritic
-                .replacingOccurrences(of: "[^[a-zA-z\\s]]", with: "", options: .regularExpression)
-            Task {
+        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
+            let strippedSearchText = searchText.folding(options: .diacriticInsensitive,
+                                                        locale: Locale(identifier: "en_US"))
+
+            if let task = searchTask {
+                task.cancel()
+            }
+            searchTask = Task {
                 cities = await RESTManager.shared.getCities(for: strippedSearchText) ?? []
                 tableView.reloadData()
             }
         }
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchBar.text = searchText
+            .replacingOccurrences(of: "[^a-zA-ZÀ-ž ]", with: "", options: .regularExpression)
     }
 }
