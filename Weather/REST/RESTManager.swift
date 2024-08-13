@@ -21,7 +21,8 @@ class RESTManager {
     private var cache = RESTCache()
 
     func getCities(for name: String) async -> Cities? {
-        let url = "https://api.openweathermap.org/geo/1.0/direct?q=\(name)&appid=\(Environment.apiKey)"
+        let query = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? name
+        let url = "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&appid=\(Environment.apiKey)"
         do {
             return try await getData(url, type: Cities.self)
         } catch RESTError.pageNotFound {

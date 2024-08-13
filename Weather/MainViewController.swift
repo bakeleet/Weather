@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class MainViewController: UITableViewController {
 
     private let searchController = UISearchController(searchResultsController: nil)
@@ -16,6 +17,7 @@ class MainViewController: UITableViewController {
         super.viewDidLoad()
 
         definesPresentationContext = true
+
         searchController.searchBar.searchBarStyle = .minimal
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchResultsUpdater = self
@@ -42,8 +44,12 @@ extension MainViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
+            let searchTextWithoutDiacritic = searchText.folding(options: .diacriticInsensitive,
+                                                                locale: Locale(identifier: "en_US"))
+            let strippedSearchText = searchTextWithoutDiacritic
+                .replacingOccurrences(of: "[^[a-zA-z\\s]]", with: "", options: .regularExpression)
             Task {
-                cities = await RESTManager.shared.getCities(for: searchText) ?? []
+                cities = await RESTManager.shared.getCities(for: strippedSearchText) ?? []
                 tableView.reloadData()
             }
         }
