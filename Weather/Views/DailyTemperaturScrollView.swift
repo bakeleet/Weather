@@ -18,6 +18,7 @@ class DailyTemperatureScrollView: UIScrollView {
     func setup(safeArea: UILayoutGuide, otherViewBottomAnchor: NSLayoutYAxisAnchor) {
         backgroundColor = .systemBackground
         showsHorizontalScrollIndicator = false
+        showsVerticalScrollIndicator = false
 
         translatesAutoresizingMaskIntoConstraints = false
         viewConstraints.append(topAnchor.constraint(equalTo: otherViewBottomAnchor, constant: 30))

@@ -44,7 +44,7 @@ class RESTManager {
         } catch RESTError.invalidServerResponse {
             print("[E] RESTManager - Invalid server response for: \(url)")
         } catch {
-            print("[E] RESTManager - Unexpected error: \(error).")
+            print("[E] RESTManager - Unexpected error: \(error)")
         }
         return nil
     }
