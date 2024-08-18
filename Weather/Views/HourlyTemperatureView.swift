@@ -27,7 +27,8 @@ class HourlyTemperatureView: UIStackView {
 
         let time = Date(timeIntervalSince1970: Double(weather.dt))
         hourLabel.text = timeFormatter.string(from: time)
-        tempLabel.text = "\(weather.temp) °C"
+        tempLabel.text = weather.formatTemperature()
+        tempLabel.textColor = Weather.temperatureColor(for: weather.temp)
     }
 
     private func setupStackView() {

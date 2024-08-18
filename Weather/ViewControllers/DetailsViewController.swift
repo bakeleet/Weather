@@ -20,11 +20,13 @@ class DetailsViewController: UIViewController {
 
             tempView.setValues(of: weather, for: selectedCity)
             hourlyTempView.setValues(of: weather)
+            dailyTempView.setValues(of: weather)
         }
     }
     
     private let tempView = TemperatureView()
     private let hourlyTempView = HourlyTemperatureScrollView()
+    private let dailyTempView = DailyTemperatureScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,9 @@ class DetailsViewController: UIViewController {
         tempView.setup(safeArea: view.safeAreaLayoutGuide)
 
         view.addSubview(hourlyTempView)
-        hourlyTempView.setup(safeArea: view.safeAreaLayoutGuide, bottomAnchor: tempView.bottomAnchor)
+        hourlyTempView.setup(safeArea: view.safeAreaLayoutGuide, otherViewBottomAnchor: tempView.bottomAnchor)
+        
+        view.addSubview(dailyTempView)
+        dailyTempView.setup(safeArea: view.safeAreaLayoutGuide, otherViewBottomAnchor: hourlyTempView.bottomAnchor)
     }
 }

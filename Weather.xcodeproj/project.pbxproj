@@ -21,6 +21,8 @@
 		2CCBA85F2C7253D2001B16A1 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBA85E2C7253D2001B16A1 /* TemperatureView.swift */; };
 		2CCBA8642C72569D001B16A1 /* HourlyTemperatureScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBA8632C72569D001B16A1 /* HourlyTemperatureScrollView.swift */; };
 		2CCBA8662C7262CC001B16A1 /* HourlyTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBA8652C7262CC001B16A1 /* HourlyTemperatureView.swift */; };
+		2CCBA8682C7266C7001B16A1 /* DailyTemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBA8672C7266C7001B16A1 /* DailyTemperatureView.swift */; };
+		2CCBA86A2C726756001B16A1 /* DailyTemperaturScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CCBA8692C726756001B16A1 /* DailyTemperaturScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		2CCBA85E2C7253D2001B16A1 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		2CCBA8632C72569D001B16A1 /* HourlyTemperatureScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTemperatureScrollView.swift; sourceTree = "<group>"; };
 		2CCBA8652C7262CC001B16A1 /* HourlyTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTemperatureView.swift; sourceTree = "<group>"; };
+		2CCBA8672C7266C7001B16A1 /* DailyTemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTemperatureView.swift; sourceTree = "<group>"; };
+		2CCBA8692C726756001B16A1 /* DailyTemperaturScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTemperaturScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				2CCBA85E2C7253D2001B16A1 /* TemperatureView.swift */,
 				2CCBA8632C72569D001B16A1 /* HourlyTemperatureScrollView.swift */,
 				2CCBA8652C7262CC001B16A1 /* HourlyTemperatureView.swift */,
+				2CCBA8692C726756001B16A1 /* DailyTemperaturScrollView.swift */,
+				2CCBA8672C7266C7001B16A1 /* DailyTemperatureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,7 +219,9 @@
 				2CCBA8642C72569D001B16A1 /* HourlyTemperatureScrollView.swift in Sources */,
 				2C0A86C52C6B69A5009BB4B6 /* RESTManager.swift in Sources */,
 				2C0A86C82C6B6AEA009BB4B6 /* Cities.swift in Sources */,
+				2CCBA8682C7266C7001B16A1 /* DailyTemperatureView.swift in Sources */,
 				2C0A86C42C6B69A5009BB4B6 /* RESTCache.swift in Sources */,
+				2CCBA86A2C726756001B16A1 /* DailyTemperaturScrollView.swift in Sources */,
 				2C0A86AB2C6B4860009BB4B6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

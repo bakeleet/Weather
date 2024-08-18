@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 // MARK: - Weather
@@ -110,4 +111,37 @@ struct FeelsLike: Codable {
 struct Temp: Codable {
     let day, min, max, night: Double
     let eve, morn: Double
+}
+
+// MARK: - Extensions
+extension Weather {
+
+    static func temperatureColor(for temperature: Double) -> UIColor {
+        switch temperature {
+        case -100..<10:
+            return .systemBlue
+        case 20..<100:
+            return .systemRed
+        default:
+            return .black
+        }
+    }
+}
+
+extension Current {
+    
+    func formatTemperature() -> String {
+        return "\(temp) °C"
+    }
+}
+
+extension Temp {
+    
+    func formatMinTemperature() -> String {
+        return "min: \(min) °C"
+    }
+
+    func formatMaxTemperature() -> String {
+        return "max: \(max) °C"
+    }
 }

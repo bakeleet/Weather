@@ -1,5 +1,5 @@
 //
-//  HourlyTemperatureView.swift
+//  DailyTemperaturScrollView.swift
 //  Weather
 //
 //  Created by bakeleet on 18/08/2024.
@@ -8,7 +8,7 @@
 import UIKit
 
 
-class HourlyTemperatureScrollView: UIScrollView {
+class DailyTemperatureScrollView: UIScrollView {
 
     private var viewConstraints: [NSLayoutConstraint] = []
     private var stackViewConstraints: [NSLayoutConstraint] = []
@@ -17,21 +17,20 @@ class HourlyTemperatureScrollView: UIScrollView {
 
     func setup(safeArea: UILayoutGuide, otherViewBottomAnchor: NSLayoutYAxisAnchor) {
         backgroundColor = .systemBackground
-        showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
 
         translatesAutoresizingMaskIntoConstraints = false
-        viewConstraints.append(topAnchor.constraint(equalTo: otherViewBottomAnchor))
+        viewConstraints.append(topAnchor.constraint(equalTo: otherViewBottomAnchor, constant: 30))
+        viewConstraints.append(bottomAnchor.constraint(equalTo: safeArea.bottomAnchor))
         viewConstraints.append(leadingAnchor.constraint(equalTo: safeArea.leadingAnchor))
         viewConstraints.append(trailingAnchor.constraint(equalTo: safeArea.trailingAnchor))
-        viewConstraints.append(heightAnchor.constraint(equalToConstant: 50))
         NSLayoutConstraint.activate(viewConstraints)
     }
 
     func setValues(of weather: Weather) {
         addSubview(stackView)
 
-        stackView.axis = .horizontal
+        stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
@@ -41,13 +40,13 @@ class HourlyTemperatureScrollView: UIScrollView {
         stackViewConstraints.append(stackView.bottomAnchor.constraint(equalTo: bottomAnchor))
         stackViewConstraints.append(stackView.leadingAnchor.constraint(equalTo: leadingAnchor))
         stackViewConstraints.append(stackView.trailingAnchor.constraint(equalTo: trailingAnchor))
-        stackViewConstraints.append(stackView.heightAnchor.constraint(equalTo: heightAnchor))
+        stackViewConstraints.append(stackView.widthAnchor.constraint(equalTo: widthAnchor))
         NSLayoutConstraint.activate(stackViewConstraints)
 
-        for hourly in weather.hourly {
-            let hourlyView = HourlyTemperatureView()
-            hourlyView.setValues(of: hourly)
-            stackView.addArrangedSubview(hourlyView)
+        for daily in weather.daily {
+            let dailyView = DailyTemperatureView()
+            dailyView.setValues(of: daily)
+            stackView.addArrangedSubview(dailyView)
         }
     }
 }

@@ -32,7 +32,8 @@ class TemperatureView: UIView {
 
     func setValues(of weather: Weather, for city: City) {
         cityLabel.text = city.name
-        tempLabel.text = "\(weather.current.temp) °C"
+        tempLabel.text = weather.current.formatTemperature()
+        tempLabel.textColor = Weather.temperatureColor(for: weather.current.temp)
     }
 
     private func setupStackView() {
