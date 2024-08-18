@@ -30,11 +30,11 @@ struct Current: Codable {
     let sunrise, sunset: Int?
     let temp, feelsLike: Double
     let pressure, humidity: Int
-    let dewPoint, uvi: Double
-    let clouds, visibility: Int
-    let windSpeed: Double
-    let windDeg: Int
-    let windGust: Double
+    let dewPoint, uvi: Double?
+    let clouds, visibility: Int?
+    let windSpeed: Double?
+    let windDeg: Int?
+    let windGust: Double?
     let weather: [WeatherDescription]
     let pop: Double?
     let rain: Rain?
